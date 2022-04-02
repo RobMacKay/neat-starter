@@ -21,6 +21,8 @@ collections:
     fields:
       - { label: "Title", name: "ticket_title", widget: "string" }
       - { label: "Description", name: "ticket_description", widget: "string" }
+      - { label: "SKU", name: "ticket_sku", widget: "string" }
+      - { label: "Location", name: "ticket_location", widget: "map" }
       - { label: "Author", name: "ticket_author", widget: "string" }
       - { label: "Event Date", name: "event_date", widget: "datetime" }
       - { label: "Publish Date", name: "ticket_date", widget: "datetime" }
