@@ -1,0 +1,41 @@
+---
+layout: ticket
+---
+
+<section class="mt-15">
+    {% set ticketlist = collections.tickets %}
+
+    {% for ticket in ticketlist | reverse %}
+        <article class="my-8">
+            <h2 class="font-bold text-3xl text-gray-900 mb-2">
+                <a href="{{ ticket.url | url }}">
+                    {% if ticket.data.ticket_title %}
+                        {{ ticket.data.ticket_title }}
+                    {% else %}
+                        Untitled
+                    {% endif %}
+                </a>
+            </h2>
+            <p class="text-base leading-6 text-gray-500 mb-3">
+                <time>
+                    {{ ticket.ticket_date | readableDate }}
+                    by
+                    <a>{{ ticket.data.ticket_author }}</a>
+
+                </time>
+            </p>
+            {% if ticket.data.ticket_description %}
+                <p class="text-lg text-gray-500 mb-3">
+                    {{ ticket.data.ticket_description }}
+                </p>
+            {% endif %}
+
+            <p>
+                <a href="{{ post.url | url }}" class="text-indigo-500 font-bold text-lg">
+                    Read more →
+                </a>
+            </p>
+
+        </article>
+    {% endfor %}
+</section>
